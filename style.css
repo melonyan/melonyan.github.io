@@ -1,15 +1,26 @@
 body {
-  background: c5e99b;
+  background: 071013;
 }
 
 img {
-width: 800px;
+width: 400px;
+border-style: solid;
+border-color: c5e99b;
+border-margin: 15px;
+}
+
+.firstp {
+background: ffeeeb;
+border-style: solid;
+border-color: fbb7c0;
+border-radius: 15px;
+padding: 10px;
 }
 
 .secondp {
-background: pink;
+background: c5e99b;
 border-style: solid;
-border-color: 
+border-color: 7d7461;
 border-radius: 15px;
 padding: 10px;
 }

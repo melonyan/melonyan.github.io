@@ -2,6 +2,10 @@ body {
   background: 071013;
 }
 
+h1 {
+  color: c5e99b;
+}
+
 img {
 width: 400px;
 border-style: solid;

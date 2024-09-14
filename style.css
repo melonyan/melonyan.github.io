@@ -1,30 +1,30 @@
 body {
-  background: 071013;
+  background-color: #071013;
 }
 
 h1 {
-  color: c5e99b;
+  color: #c5e99b;
 }
 
 img {
 width: 400px;
 border-style: solid;
-border-color: c5e99b;
+border-color: #c5e99b;
 border-margin: 15px;
 }
 
 .firstp {
-background: ffeeeb;
+background-color: #ffeeeb;
 border-style: solid;
-border-color: fbb7c0;
+border-color: #fbb7c0;
 border-radius: 15px;
 padding: 10px;
 }
 
 .secondp {
-background: c5e99b;
+background-color: #c5e99b;
 border-style: solid;
-border-color: 7d7461;
+border-color: #7d7461;
 border-radius: 15px;
 padding: 10px;
 }

@@ -3,6 +3,11 @@ h1 {
   color: #c5e99b;
 }
 
+.header {
+  width: 100%;
+  height: auto;
+}
+
 .mainbodyimg {
 width: 400px;
 border-style: solid;

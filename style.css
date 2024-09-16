@@ -8,6 +8,11 @@ h1 {
   height: auto;
 }
 
+.sideads {
+  height: 100%;
+  width: auto;
+}
+
 .mainbodyimg {
 width: 400px;
 border-style: solid;
@@ -16,7 +21,7 @@ border-margin: 15px;
 }
 
 .firstp {
-background-color: #ffeeeb;
+background-color: #EFE7E0;
 border-style: solid;
 border-color: #fbb7c0;
 border-radius: 15px;

@@ -18,6 +18,10 @@ figure {
   text-align: center;
 }
 
+figurecaption {
+  font-size: 10px;
+}
+
 .mainbodyimg {
 width: 400px;
 border-style: solid;

@@ -1,0 +1,904 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+  font-family: 'Poppins';
+  }
+
+  /* creating variables for website colors */
+ :root {
+  --background:#2B2B33;
+  --second-background: #20202b;
+  --purple1: #524B62;
+  --purple2: #786A92;
+  --purple3: #A991D2;  
+  --purple4: #A389D1;
+  --purple5: #9D80CF;  
+ }
+ 
+ body {
+  /* setting height to take up the whole viewport */
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+nav {
+  /* making sure navigation bar is displayed at the top of the page*/
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5em 15%;
+  /*selecting display option for navigation as flex*/
+  display: flex;
+  /*aligning nav elements to center*/
+  align-items: center;
+  /*aligning items in nav to have space between them*/
+  justify-content: space-between;
+  /* using second variable created before as background for the nav bar*/
+  background-color: var(--second-background);
+  /* using blur filter to create a glassy effect for nav */
+  backdrop-filter: blur(10px);
+  /* to make sure the nav bar stays ontop/in front of other elements, set a high z-index*/
+  z-index: 1000;
+}
+
+nav ul {
+  /* setting list's display as flex, centering the list and adding a gap between 
+  list items */
+  display:flex;
+  align-items: center;
+  gap: 3em;
+}
+
+nav ul a {
+  /*styling the links in the ul*/
+  color: var(--purple3);
+  /*setting lower opacity for color*/
+  opacity: 0.7;
+  /*adding transition for the hover effect*/
+  transition: 0.2s ease-in-out;
+}
+
+/*adding the opacity of links to increase on hover*/
+nav ul a:hover {
+  opacity: 1;
+}
+
+/*styling the logo*/
+.logo {
+  font-size: 2em;
+  color: white;
+  font-weight: 800;
+  opacity: 0.8;
+  /*adding transition for the hover effect*/
+  transition: 0.2s ease-in-out;
+}
+
+.logo:hover {
+  opacity: 1;
+}
+
+/*styling the contact me button*/
+.conBtn {
+  padding: 0.5em 0.9em;
+  color: var(--purple3);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border-radius: 0.5em;
+  font-size: 1em;
+  border: 2px solid var(--purple3);
+  /*making it so that on hover the cursor changes shape to a pointer*/
+  cursor: pointer;
+  /*adding transition for the hover effect*/
+  transition: 0.3s ease-in-out;
+}
+
+.conBtn:hover {
+  background-color: var(--purple3);
+  color: black;
+}
+
+/*creating the gradient effect for logo and text*/
+span {
+ background: linear-gradient(to right, var(--purple1), var(--purple2), var(--purple3));
+ /*clipping the background so it is only behind the text*/
+ background-clip: text;
+ /*making the text color transparent so we can see the gradient background*/
+ color: transparent;
+}
+
+/*adding in the dropdown meny which only appears when the screen width is smaller*/
+#menu {
+  color: white;
+  font-size: 3em;
+  display: none;
+}
+
+/* !!!SCROLLBAR!!! */
+/*using webskit to change the scrollbar background color and width*/
+::-webkit-scrollbar {
+  background-color: var(--background);
+  width: 20px;
+}
+
+/*also changing the scrollbar thumb (or bar that moves inside the scrollbar) 
+to have the same gradient as the span but going from top to bottom*/
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--purple1), var(--purple2), var(--purple3));
+}
+
+
+/*defining base style for the sections*/
+section{
+/*height will always be 100 of the viewport*/
+  min-height: 100vh;
+  padding: 5% 15%;
+}
+
+/* !!!HOME SECTION!!! */
+#home {
+  /*selecting flex as the display*/
+  display: flex;
+  /*making the elements be next to each othe in a row*/
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /*adding a gap between the elements*/
+  gap: 3em;
+  color: white;
+}
+
+#home img {
+  /*changing image width to 18% of viewport width*/
+  width: 25vw;
+  /*adding a top margin so the image would not be lost behind the nav*/
+  margin-top: 3em;
+  /*adding a transition for hover effect*/
+  transition: 0.4s ease-in-out;
+}
+
+/*adding glowing hover effect to image using filter and drop-shadow*/
+#home img:hover {
+  filter: drop-shadow(0 0 0.75em var(--purple3)); 
+ }
+
+.greeting {
+  /*selecting grid as the display*/
+  display: grid;
+  grid-template-columns: auto;
+  text-align: left;
+  gap: 0em 1em;
+  max-width: 600px;
+}
+
+/*styling headings in the greeting div*/
+.greeting h1 {
+  font-size: 4em;
+  font-weight: 500;
+}
+
+.greeting h2 {
+  padding: 4em 0 0 0;
+}
+
+.greeting h3 {
+  font-size: 1.5em;
+  font-weight: 400;
+  padding: 0 0 20px 0;
+}
+
+.greeting h3 span {
+  font-size: 1.2em;
+}
+
+.greeting p {
+  padding: 20px 0 0 0;
+  opacity: 0.8;
+}
+
+.greeting hr {
+  border-color: var(--purple3);
+}
+
+/*copy of the contact me button but for read more feature 
+of the about section in the greeting section*/
+.moreBtn {
+  padding: 0.5em 0.9em;
+  color: var(--purple3);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border-radius: 0.5em;
+  /*adding a max width so that the button does not follow the max width of div*/
+  max-width: 124px;
+  font-size: 1em;
+  border: 2px solid var(--purple3);
+  /*making it so that on hover the cursor changes shape to a pointer*/
+  cursor: pointer;
+  /*adding transition for the hover effect*/
+  transition: 0.3s ease-in-out;
+}
+
+.moreBtn:hover {
+  background-color: var(--purple3);
+  color: black;
+}
+
+/* !!!DOWNLOAD BUTTON!!! */
+.dLoadBtn {
+  padding: 0.5em 0.9em;
+  color: var(--purple3);
+  background: var(--background);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border-radius: 0.5em;
+  font-size: 1em;
+  border: 2px solid var(--purple3);
+  /*making it so that on hover the cursor changes shape to a pointer*/
+  cursor: pointer;
+  /*adding transition for the hover effect*/
+  transition: 0.3s ease-in-out;
+}
+
+.dLoadBtn:hover {
+  background-color: var(--purple3);
+  color: black;
+}
+
+.buttons {
+  display: flex;
+  gap: 1em;
+}
+
+/* !!!SKILLS SECTION!!! */
+#skills {
+  background-color: var(--second-background);
+}
+
+#skills h2{
+  padding: 0% 0% 5% 10%;
+  font-size: 2.5em;
+}
+
+/*styling skills div in skills section*/
+.skillsContainer {
+/*applying grid display method*/
+  display: grid;
+/*choosing automate column template for grid layout*/
+  grid-template-columns: auto auto auto;
+/*aligning elemenets in the centre*/
+  text-align: center;
+  /*adding a gap between the elements*/
+  gap: 4em;
+  /*adding padding so that the div container is displaye better/more centered*/
+  padding: 0% 20%;
+}
+
+/*styling .skills div elements, adding transparent background and transition 
+effects for hover.*/
+.skillsContainer div{
+  background-color: transparent;
+  /*adding padding so that elements dont shift together when hovered over*/
+  padding: 2em 0em 1em 0em;
+  max-width: 150px;
+  font-size: 1em;
+  /*setting transition effect for .skills divs*/
+  transition: 0.3s ease-in-out;
+}
+
+/*setting hover effect for div evelements inside skills div*/
+.skillsContainer div:hover{
+/*on hover the div moves down 5px*/
+  transform: translateY(5px);
+/*setting background as the same as section background so that glow effect stays 
+around the border*/
+  background-color: var(--second-background);
+/*setting glow effect around div elements*/
+  filter: drop-shadow(0 0 0.80em var(--purple3));
+/*adding border radius for rounded border corners*/
+  border-radius: 10%;
+}
+
+/*setting image size for skill icons*/
+.skillsContainer img {
+  width: 100px;
+  height: 100px;
+}
+
+/* !!!PROJECTS SECTION!!! */
+#projects {
+  background-color: var(--background);
+}
+
+.header {
+  text-align: center;
+  font-size: 3em;
+  margin: 0.5em 0;
+}
+
+/*styling the container that holds the individual box divs*/
+.projectsContainer {
+/*display chosen is grid*/
+  display: grid;
+/*using column template and making it automatically fit the elements next to 
+each other while calculating how many elements fit on the screen; also, 
+adding a minmax so that the boxes do not get smaller than 250px wide and 1 fraction tall*/
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+}
+
+.box {
+  border: 3px solid var(--purple1);
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  object-fit: cover;
+  padding: 3em;
+  gap: 2em;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  /*adding a background so that the hover effect only goes around the border*/
+  background: var(--background);
+}
+
+.box:hover {
+  /*setting glow effect around div elements*/
+  filter: drop-shadow(0 0 0.80em var(--purple3));
+  /*on hover the box moves down by 5 pixels*/
+  transform: translateY(5px);
+}
+
+.box p{
+  opacity: 0.8;
+}
+
+.box h1{
+  font-size: 1.8em;
+}
+
+.box img {
+  min-width: 25px;
+  border-radius: 0.5em;
+}
+
+/*!!!CONTACT SECTION!!!*/
+#contact {
+  background-color: var(--second-background);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+form .input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 1em;
+}
+
+.input-box span {
+  font-size: 1.2em;
+}
+
+form input {
+  font-size: 1em;
+  padding: 1em 7em;
+  border-radius: 0.5em;
+  border: solid;
+  /*making the border transparent so to make it visible during focus*/
+  border-color: transparent;
+  /*removing the outline*/
+  outline: none;
+  background-color: var(--background);
+  /*input text color is set to purple3*/
+  color: var(--purple3);
+}
+
+form textarea {
+  height: 140px;
+  font-size: 1em;
+  padding: 1em 7.7em;
+  border-radius: 0.5em;
+  border: solid;
+  /*making the border transparent so to make it visible during focus*/
+  border-color: transparent;
+  /*removing the outline*/
+  outline: none;
+  background-color: var(--background);
+  /*input text color is set to purple3*/
+  color: var(--purple3);
+}
+
+/*on focus the background changes and the border becomes visible*/
+form input:focus {
+  background: var(--second-background);
+  border-color: var(--purple2);
+  filter: drop-shadow(0 0 0.80em var(--purple3));
+}
+
+/*on focus the background changes and the border becomes visible*/
+form textarea:focus {
+  background: var(--second-background);
+  border-color: var(--purple2);
+  filter: drop-shadow(0 0 0.80em var(--purple3));
+}
+
+/*copy of contact button styling for submit button*/
+#contact button {
+  padding: 0.5em 0.9em;
+  background-color: var(--background);
+  color: var(--purple3);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border-radius: 0.5em;
+  /*adding a max width so that the button does not follow the max width of div*/
+  max-width: 122px;
+  font-size: 1em;
+  border: 2px solid var(--purple3);
+  /*making it so that on hover the cursor changes shape to a pointer*/
+  cursor: pointer;
+  /*adding transition for the hover effect*/
+  transition: 0.3s ease-in-out;
+}
+
+#contact button:hover {
+  background-color: var(--purple3);
+  color: black;
+}
+
+/*styling the footer*/
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10em;
+  /*making sure the footer stays at the very bottom*/
+  bottom: 0;
+  background-color: var(--background);
+  width: 100%;
+  padding: 3em 15%;
+}
+
+.colLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.colBox {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.colBox i {
+  font-size: 1.5em;
+}
+
+.colBox span {
+  font-size: 1em;
+}
+
+.colRight {
+ display: flex;
+ flex-direction: column;
+ max-width: 500px;
+ gap: 1em;
+ color: var(--purple3);
+}
+
+.colRight h1 {
+  font-size: 1.3em;
+}
+
+.colRight .socialIcons {
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+  gap: 1em;
+}
+
+.colRight .socialIcons a {
+  font-size: 2em;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.socialIcons i:hover {
+  color: var(--purple3);
+}
+
+
+/*BACK TO TOP BUTTON*/
+#topBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: transparent; /* Set a background color */
+  color: var(--purple3); /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 4px 8px 1px; /* Some padding */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 2em; /* Increase font size */
+  font-weight: 400;
+}
+
+#topBtn:hover {
+  background: linear-gradient(to bottom, var(--purple1), var(--purple2), var(--purple3));
+  /* Add a dark-grey background on hover */
+  color: var(--background);
+}
+
+/*VALIDATION BUTTON*/
+#valBtn {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  left: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: transparent; /* Set a background color */
+  color: var(--purple3); /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 4px 8px 1px; /* Some padding */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 2em; /* Increase font size */
+  font-weight: 600;
+}
+
+#valBtn:hover {
+  background: linear-gradient(to bottom, var(--purple1), var(--purple2), var(--purple3));
+  /* Add a dark-grey background on hover */
+  color: var(--background);
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!RESPONSIVE WEB DESIGN!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+@media(max-width: 968px) {
+  section {
+    /*changing padding from 5em to 8em*/
+    padding: 8em 15%;
+  }
+  nav .conBtn {
+    /*"removing" the contact me button*/
+    display: none;
+  }
+
+  /*selecting dropdown menu display as block, changing font color to purple3 and adding transition*/
+  #menu {
+    display: block;
+    color: var(--purple3);
+    transition: 0.2s ease-in-out;
+  }
+
+  /*adding dropdown menu hover effects*/
+  #menu:hover {
+    background-color: var(--purple3);
+    color: var(--second-background);
+    opacity: 0.5;
+  } 
+
+  /*creating the dropdown menu with the links in nav*/
+  .links {
+    /*position will be absolute and stay on top*/
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1em 3em;
+    color: var(--purple3);
+    /*selecting display for dropdown meny as flex*/
+    display: flex;
+    /*flex direction will be column*/
+    flex-direction: column;
+    /*links will be alligned in the center*/
+    text-align: center;
+    /*setting a dark grey rgba background color so links stand out*/
+    background-color: rgba(28, 26, 33, 0.9); 
+    /*setting display to none for active effect*/
+    display: none;
+  }
+
+  /*styling the links for the dropdown*/
+  .links a {
+    /*creating space between links*/
+    margin: 1em 0;
+    /*display will be block*/
+    display: block;
+    font-size: 1em;
+    color: var(--purple3);
+  }
+
+/*adding an active class for the links*/  
+.links.active {
+    display: block;
+  }
+
+/*changing padding for sections*/
+  section {
+    padding: 10% 15%;
+
+  }
+
+  /*changing home section*/
+  #home h1 {
+    font-size: 2.5em;
+  }
+
+  #home h2 {
+    font-size: 1em;
+    padding: 0;
+  }
+
+  #home h3 {
+    font-size: 1.5em;
+  }
+
+  #home span {
+    font-size: 1em;
+  }
+
+  #home img {
+    width: 40vw;
+    margin: 0; 
+    padding: 20% 0 0 0;
+  }
+
+  /*setting home display to flex, and direction as column*/
+  #home {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #home .moreBtn {
+    font-size: 0.8em;
+    max-width: 102px;
+    text-align: center;
+  }
+
+  .dLoadBtn {
+    display: flex;
+    font-size: 0.7em;
+    align-items: center;
+  }
+
+  /*styling skills section to display better on smaller screen*/
+  #skills h2 {
+    font-size: 2em;
+    text-align: center;
+    padding: 0 0 5% 0;
+  }
+
+  /*setting skills container to have flex, wrap, be centered on both axis and to have a small gap*/
+  .skillsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+  }
+/* changing the divs styling in the skills container */
+  .skillsContainer div {
+    min-width: 110px;
+    margin: 0 0 1.5em 0;
+    font-size: 0.8em;
+  }
+/* making the skills images half as small*/
+  .skillsContainer img {
+    width: 50px;
+    height: 50px;
+  }
+/*making the read more button a bit smaller*/
+  .skillsContainer .moreBtn {
+    font-size: 0.8em;
+  }
+
+  /*changing the projects section*/
+  #projects .header {
+    font-size: 2em;
+    padding: 0 0 0.5em 0;
+  }
+
+  .box {
+    padding: 2em;
+    gap: 1em;
+  }
+
+  .box h1{
+    font-size: 1.5em;
+  }
+
+  .box p {
+    font-size: 0.9em;
+  }
+
+
+  /*changing the contact me section*/
+  #contact .header {
+    font-size: 2em;
+  }
+
+  #contact .input-box span {
+    font-size: 1.2em;
+  }
+
+  .input-box input {
+    padding: 0.5em 1em;
+  }
+
+  .input-box textarea {
+    height: 300px;
+    padding: 0.5em 1.5em;
+  }
+
+  /*styling footer*/
+  footer {
+    gap: 5em;
+  }
+
+  /*making back to top button smaller*/
+  #topBtn {
+    font-size: 1.5em;
+  }
+
+   /*making validation button smaller*/
+   #valBtn {
+    font-size: 1.5em;
+  }
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!responsive design for up to 768px!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+@media(mad-width: 768px) {
+/*changing padding for sections*/
+section {
+  padding: 10% 15%;
+}
+
+/*changing home section*/
+#home h1 {
+  font-size: 2em;
+}
+
+#home h2 {
+  font-size: 0.5em;
+  padding: 0;
+}
+
+#home h3 {
+  font-size: 1em;
+}
+
+#home span {
+  font-size: 0.5em;
+}
+
+#home img {
+  width: 40vw;
+  margin: 0; 
+  padding: 20% 0 0 0;
+}
+
+/*setting home display to flex, and direction as column*/
+#home {
+  display: flex;
+  flex-direction: column;
+}
+
+#home .moreBtn {
+  font-size: 0.8em;
+  max-width: 102px;
+  text-align: center;
+}
+
+.dLoadBtn {
+  display: flex;
+  font-size: 0.7em;
+  align-items: center;
+}
+
+.buttons {
+ flex-direction: column;
+}
+
+/*styling skills section to display better on smaller screen*/
+#skills h2 {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 0 0 5% 0;
+}
+
+/*setting skills container to have flex, wrap, be centered on both axis and to have a small gap*/
+.skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+/* changing the divs styling in the skills container */
+.skillsContainer div {
+  min-width: 110px;
+  margin: 0 0 1.5em 0;
+  font-size: 0.8em;
+}
+/* making the skills images half as small*/
+.skillsContainer img {
+  width: 50px;
+  height: 50px;
+}
+/*making the read more button a bit smaller*/
+.skillsContainer .moreBtn {
+  font-size: 0.8em;
+}
+
+/*changing the projects section*/
+#projects .header {
+  font-size: 1.5em;
+  padding: 0 0 0.5em 0;
+}
+
+.box {
+  padding: 1.5em;
+  gap: 1em;
+}
+
+.box h1{
+  font-size: 1em;
+}
+
+.box p {
+  font-size: 0.7em;
+}
+
+/*changing the contact me section*/
+#contact .header {
+  font-size: 1.5em;
+}
+
+#contact .input-box span {
+  font-size: 1em;
+}
+
+.input-box input {
+  padding: 0.5em 1em;
+}
+
+.input-box textarea {
+  height: 240px;
+  padding: 0.5em 1em;
+}
+
+/*making back to top button smaller*/
+#topBtn {
+  font-size: 1em;
+}
+
+ /*making the validation button smaller*/
+ #valBtn {
+  font-size: 1em;
+}
+
+footer {
+  flex-direction: column;
+  gap: 5em;
+  align-items: baseline;
+}
+
+}

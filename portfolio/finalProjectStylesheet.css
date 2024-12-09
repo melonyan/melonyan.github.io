@@ -765,7 +765,7 @@ footer {
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 /*!!!responsive design for up to 768px!!!*/
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-@media(mad-width: 768px) {
+@media(max-width: 768px) {
 /*changing padding for sections*/
 section {
   padding: 10% 15%;
